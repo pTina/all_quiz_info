@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="css/reset.css">
     <style>
         *{overflow-x: hidden;}
-        div{ width: 1700px; height: 1000px; background-color: rgba(0,0,0,0.5);}
-/*        img{width: 300px; height: 300px; }*/
+        .main01{ position: fixed; left: 0; top: 0; width: 1700px; height: 1000px; overflow-y: hidden;}
+        .main01>div{position: absolute; width: 1700px; height: 1000px; background-color: rgba(0,0,0,0.5);}
+        #main01Icon{ position: absolute; width: 370px; height: 370px; top: 280px; left: 332px;}
+        .main01>span{position: absolute; font-weight: bold; display: block;}
     </style>
     <script></script>
 </head>
 <body>
-    <div>
-        <img src="images/study.jpg" alt="">
+    <div class="main01">
+        <div></div>
+        <img src="images/study.jpg" alt="배경">
+        <img src="images/icon-1.png" alt="앱아이콘" id="main01Icon">
+        <span>ALL QUIZ</span>
     </div>
-    <img src="images/icon-1.png" alt="">
 </body>
 </html>
