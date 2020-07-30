@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>All_Quiz</title>
@@ -7,19 +7,36 @@
     <link rel="stylesheet" href="css/reset.css">
     <style>
         *{overflow-x: hidden;}
+/*        .main01:after{content: ""; margin: auto; clear: both;}*/
         .main01{ position: fixed; left: 0; top: 0; width: 1700px; height: 1000px; overflow-y: hidden;}
         .main01>div{position: absolute; width: 1700px; height: 1000px; background-color: rgba(0,0,0,0.5);}
-        #main01Icon{ position: absolute; width: 370px; height: 370px; top: 280px; left: 332px;}
-        .main01>span{position: absolute; font-weight: bold; display: block;}
+        #main01Icon{ position: absolute; width: 320px; height: 320px; top: 300px; left: 370px;
+                    opacity: 0;}
+        .main01>p{position: absolute; top: 357px; left: 738px; 
+                    font-weight: bold; font-size: 80px; color: #fff; opacity: 0;}
+        .main01>span{position: absolute; top: 502px; left: 738px;
+                    font-weight: 300; font-size: 30px; color: #fff; opacity: 0;}
     </style>
-    <script></script>
+    <script>
+    $(function(){
+        // main01 애니메이션 추가
+        $('#main01Icon').stop().animate({'top':280,'opacity':1},1500);
+        $('.main01>p').stop().delay(200).animate({'top':337,'opacity':1},1500);
+        $('.main01>span').stop().delay(300).animate({'top':482,'opacity':1},1500);
+        
+    })
+    </script>
 </head>
 <body>
     <div class="main01">
         <div></div>
-        <img src="images/study.jpg" alt="배경">
+        <img src="images/study.jpg" alt="배경" id="main01Background"> 
         <img src="images/icon-1.png" alt="앱아이콘" id="main01Icon">
-        <span>ALL QUIZ</span>
+        <p>ALL QUIZ</p>
+        <span>
+            이제 핸드폰으로 공부하는 세상<br>
+            언제 어디서나 간편하게 All Quiz로 공부하세요.
+        </span>
     </div>
 </body>
 </html>
