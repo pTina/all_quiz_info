@@ -22,7 +22,7 @@
                     font-weight: 300; font-size: 30px; color: #fff; opacity: 0;}
         
         .main02{ position: relative; width: 100%; height: 1000px; background-color: #fff;}
-        .main02>div:nth-of-type(1){width: 100%; height: 430px; background-color: #63a0d3;
+        .main02>div:nth-of-type(1){width: 100%; height: 0; background-color: #63a0d3;
                     position: absolute; bottom: 0; left: 0;}
         #ui{position: absolute; width: 270px; 
             left: 700px; top: 350px; 
@@ -36,15 +36,67 @@
                                         margin-top: 20px;}
         .main02>div:nth-of-type(2){position: relative; top: 150px; left: 620px;}
         
-    </style>
-    <script>
-    $(function(){
-        // main01 애니메이션 추가
-        $('#main01Icon').stop().animate({'top':280,'opacity':1},1500);
-        $('.main01>p').stop().delay(200).animate({'top':337,'opacity':1},1500);
-        $('.main01>span').stop().delay(300).animate({'top':482,'opacity':1},1500);
         
-    })
+/*        애니메이션 */
+        .ani_main01{
+            animation-name: kf_main01Icon;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        .ani_main01_p{
+            animation-name: kf_main01_p;
+            animation-delay: 0.2s;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        .ani_main01_span{
+            animation-name: kf_main01_span;
+            animation-delay: 0.4s;    
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes kf_main01Icon{
+            from{top: 300px; opacity: 0;}
+            to{top: 280px; opacity: 1;}
+        }
+        @keyframes kf_main01_p{
+            from{top: 357px; opacity: 0;}
+            to{top: 337px; opacity: 1;}
+        }
+        @keyframes kf_main01_span{
+            from{top: 502px482px; opacity: 0;}
+            to{top: 482px; opacity: 1;}
+        }
+        
+    </style>
+    <script> 
+        var scrollTop=0;
+        var scroll = true;
+
+        $(function(){
+            
+    //         스크롤이 될 때마다
+            $(window).scroll(function(){
+                scrollTop=$(window).scrollTop();
+                if(scrollTop<1000){
+                    $('#main01Icon').addClass('ani_main01');
+                    $('.main01>p').addClass('ani_main01_p');
+                    $('.main01>span').addClass('ani_main01_span');
+                }else{
+                    $('#main01Icon').removeClass('ani_main01');
+                    $('.main01>p').removeClass('ani_main01_p');
+                    $('.main01>span').removeClass('ani_main01_span');
+
+                }
+
+            })
+
+
+        })
+
+    
+
     </script>
 </head>
 <body>
