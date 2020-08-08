@@ -27,27 +27,21 @@
                     position: absolute; bottom: 0; left: 0;}
         
 /*        main02 */
-        .main02>div:nth-of-type(2){position: absolute;  left: 680px; top: 350px; 
-                                width: 270px; height: 558px; border-radius: 38px;
-                                box-shadow: 0 1px 1px #3d3d3d,
-                                          0 3px 2px #424242, 
-                                          0 4px 10px #555555
-                                }
-        .main02>div:nth-of-type(2)>div{width: 270px; height: 558px;
-                                    position: absolute; background-color: #F7F1DF; }
-        #phone{position: absolute;width: 270px;}
-        .main02>div:nth-of-type(2)>img{position: absolute; width:266px;}
-        .main02>div:nth-of-type(2)>img:not(:last-child){top: 30px; left: 7px;}
-        .main02>div:nth-of-type(2)>img:nth-of-type(1){}
-        .main02>div:nth-of-type(2)>img:nth-of-type(2){display: none;}
-        .main02>div:nth-of-type(2)>img:nth-of-type(3){display: none;}
+        .main02>div:nth-of-type(2){position: absolute; left: 687px; top: 402px;
+                                    width:280px; height: 550px; background-color: #F7F1DF;
+                                    box-shadow: 0 1px 1px #3d3d3d,
+                                                0 3px 2px #424242, 
+                                                0 4px 10px #555555;
+                                    border-radius: 38px;
+        }
+/*        main02 유아이 감싸고 있는 div*/
+        .main02>div:nth-of-type(2)>div{width: 2000px; position: absolute; top: 53px; left: 14px;}
+/*        main02 유아이*/
+        .main02>div:nth-of-type(2)>div>img{width: 260px; float: left; display: none;}
+/*        .main02>div:nth-of-type(2)>div>img:first-child{display: none;}*/
+/*        main02 핸드폰 이미지*/
+        .main02>div:nth-of-type(2)>img{width: 280px; position: absolute; left: 0; top: 0;}
         
-        
-        
-/*
-        .main02>div:nth-of-type(2)>img{ position: absolute; left: 687px; top: 402px;
-                                    width: 254px;}
-*/
 /*        main02 상단 텍스트*/
         .main02>div:nth-of-type(3){position: relative; top: 150px; left: 620px;}
         .main02>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900;}
@@ -113,10 +107,7 @@
             to{height: 380px;}
         }
 /*        main02 div_2_ui01*/
-        @keyframes kf_main02_div_2_ui01{
-            from{ opacity: 0; transform: scale(0.5);}
-            to{ opacity: 1; transform: scale(1);}
-        }
+
         
         
         
@@ -125,21 +116,14 @@
         var scrollTop=0;
         var scroll = true;
         
-         
-        
         $(function(){
-//            function main02(fun_name){
-//                for(i=0; i<3; i++){
-//                    $('.main02>div:nth-of-type(2)>img').animate(fun_name,2s,linear);
-//                }
-//        }
            
             
             $('#main01Icon').addClass('ani_main01Icon');
             $('.main01>p').addClass('ani_main01_p');
             $('.main01>span').addClass('ani_main01_span');
             
-//            $('.main02>div:nth-of-type(2)').css({'background-image':'url(images/m02_daily_ui02.png)'});
+            
             
 
         
@@ -163,14 +147,22 @@
                 if(scrollTop >= 1000 && scrollTop <2000){
                     console.log('true');
                     $('.main02>div:nth-of-type(1)').addClass('ani_main02_div_1');
-//                    main02_ui_ani();
-//                    $('.main02>div:nth-of-type(2)>img:nth-of-type(1)').addClass('ani_main02_div_2_ui01');
+                    $('.main02>div:nth-of-type(2)>div>img').delay(300).fadeIn(1000,function(){
+                        $('.main02>div:nth-of-type(2)>div').stop().animate({'left':-252},function(){
+                            setTimeout(function(){
+                                $('.main02>div:nth-of-type(2)>div').css({'left':-511,'top':52});
+                            },500);
+                            
+                            setTimeout(function(){
+                                $('.main02>div:nth-of-type(2)>div').stop().animate({'left':-770});
+                            },1000);
+                        });
+                        
+                    });
                     
                 }else{
                     $('.main02>div:nth-of-type(1)').removeClass('ani_main02_div_1');
-//                    $('.main02>div:nth-of-type(2)>img:nth-of-type(1)').removeClass('ani_main02_div_2_ui01');
-                    
-                    
+                    $('.main02>div:nth-of-type(2)>*').stop().clear;
                 }
                 
 
@@ -199,10 +191,12 @@
 <!--       배경_하단_블루 -->
         <div></div>
         <div>
-            <div></div>
-            <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
-            <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
-            <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
+            <div>
+                <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
+                <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
+                <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
+                <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
+            </div>
             <img src="images/mobile.png" alt="main_ui" id="phone">    
         </div>
         <div>
