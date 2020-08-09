@@ -43,10 +43,11 @@
         .main02>div:nth-of-type(2)>img{width: 280px; position: absolute; left: 0; top: 0;}
         
 /*        main02 상단 텍스트*/
-        .main02>div:nth-of-type(3){position: relative; top: 150px; left: 620px;}
-        .main02>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900;}
+        .main02>div:nth-of-type(3){position: relative; top: 150px; left: 630px;
+                                    width: 424px;}
+        .main02>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900; position: relative;}
         .main02>div:nth-of-type(3)>span{color: #2a2a2a; display: block; margin-left: 60px;
-                                        margin-top: 20px;}
+                                        margin-top: 20px; position: relative; right: -370px;}
         
         
         
@@ -78,12 +79,16 @@
             animation-fill-mode: forwards;
             animation-timing-function:ease-in-out;
         }
-        
-        .ani_main02_div_2_ui01{
-            animation-name: kf_main02_div_2_ui01;
-            animation-duration: 1s;
+/*        main01 div_2_p DAILY QUIZ*/
+        .ani_main02_div_3_p{
+            animation-name: kf_main02_div_3_p;
+            animation-duration: 1.5s;
             animation-fill-mode: forwards;
-            animation-timing-function:ease-in-out;
+        }
+        .ani_main02_div_3_span{
+            animation-name: kf_main02_div_3_span;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
         }
         
 /*        main01 애니메이션-2*/
@@ -106,8 +111,15 @@
             from{height: 0px;}
             to{height: 380px;}
         }
-/*        main02 div_2_ui01*/
-
+/*        main02 DAILY QUIZ*/
+        @keyframes kf_main02_div_3_p{
+            from{ left:-640px; opacity: 0;}
+            to{ left:0px; opacity: 1;}
+        }
+        @keyframes kf_main02_div_3_span{
+            from{ right: -370px; opacity: 0;}
+            to{ right: 0; opacity: 1;}
+        }
         
         
         
@@ -151,18 +163,23 @@
                         $('.main02>div:nth-of-type(2)>div').stop().animate({'left':-252},function(){
                             setTimeout(function(){
                                 $('.main02>div:nth-of-type(2)>div').css({'left':-511,'top':52});
-                            },500);
+                            },1000);
                             
                             setTimeout(function(){
                                 $('.main02>div:nth-of-type(2)>div').stop().animate({'left':-770});
-                            },1000);
+                            },2000);
                         });
                         
                     });
+                    $('.main02>div:nth-of-type(3)>p').addClass('ani_main02_div_3_p');
+                    $('.main02>div:nth-of-type(3)>span').addClass('ani_main02_div_3_span');
+                    
                     
                 }else{
                     $('.main02>div:nth-of-type(1)').removeClass('ani_main02_div_1');
-                    $('.main02>div:nth-of-type(2)>*').stop().clear;
+                    $('.main02>div:nth-of-type(3)>p').removeClass('ani_main02_div_3_p');
+                    $('.main02>div:nth-of-type(3)>span').removeClass('ani_main02_div_3_span');
+                    
                 }
                 
 
