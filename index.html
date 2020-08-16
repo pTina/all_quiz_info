@@ -49,6 +49,32 @@
         .main02>div:nth-of-type(3)>span{color: #2a2a2a; display: block; margin-left: 60px;
                                         margin-top: 20px; position: relative; right: -370px;}
         
+/*        main03*/
+        .main03{ position: relative; width: 100%; height: 1000px; background-color: #fff;}
+        .main03>div:nth-of-type(1){width: 100%; height: 380px; background-color: #63a0d3;
+                    position: absolute; bottom: 0; left: 0;}
+        .main03>div:nth-of-type(3){ position: relative; top: 180px; left: 630px;
+                                    width: 424px;}
+        .main03>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900; position: relative;}
+        
+/*        main04*/
+        .main04{position: relative; width: 100%; height: 1000px; background-color: #fff;}
+        .main04>div:nth-of-type(1){width: 100%; height: 380px; background-color: #63a0d3;
+                    position: absolute; bottom: 0; left: 0;}
+        .main04>div:nth-of-type(3){ position: relative; top: 180px; left: 630px;
+                                    width: 424px;}
+        .main04>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900; position: relative;}
+        
+/*        main05*/
+        .main05{position: relative; width: 100%; height: 1000px; background-color: #fff;}
+        .main05>div:nth-of-type(1){width: 100%; height: 380px; background-color: #63a0d3;
+                    position: absolute; bottom: 0; left: 0;}
+        .main05>div:nth-of-type(3){ position: relative; top: 180px; left: 630px;
+                                    width: 424px;}
+        .main05>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900; position: relative;}
+        
+        
+        
         
         
 /*        main01 애니메이션-1 */
@@ -157,7 +183,6 @@
                 
                 // main02 애니메이션 조건
                 if(scrollTop >= 1000 && scrollTop <2000){
-                    console.log('true');
                     $('.main02>div:nth-of-type(1)').addClass('ani_main02_div_1');
                     $('.main02>div:nth-of-type(2)>div>img').delay(300).fadeIn(1000,function(){
                         $('.main02>div:nth-of-type(2)>div').stop().animate({'left':-252},function(){
@@ -179,6 +204,10 @@
                     $('.main02>div:nth-of-type(1)').removeClass('ani_main02_div_1');
                     $('.main02>div:nth-of-type(3)>p').removeClass('ani_main02_div_3_p');
                     $('.main02>div:nth-of-type(3)>span').removeClass('ani_main02_div_3_span');
+                    
+                }
+                
+                if(scrollTop >= 2000 && scrollTop <3000){
                     
                 }
                 
@@ -222,7 +251,68 @@
                 랜덤으로 생성되는 문제를 매일매일 풀어보세요.
             </span>
         </div>
-        
     </div>
+    <div class="main03">
+        <div></div>
+        <div>
+            <div>
+<!--
+                <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
+                <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
+                <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
+                <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
+-->
+            </div>
+<!--            <img src="images/mobile.png" alt="main_ui" id="phone">    -->
+        </div>
+        <div>
+            <p>MOCK TEST</p>
+            <span>
+                총 30문제로 제공되는 모의테스트로 자신의 실력을 확인해보세요.
+            </span>
+        </div>
+    </div>
+    <div class="main04">
+        <div></div>
+        <div>
+            <div>
+<!--
+                <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
+                <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
+                <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
+                <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
+-->
+            </div>
+<!--            <img src="images/mobile.png" alt="main_ui" id="phone">    -->
+        </div>
+        <div>
+            <p>SUBJECT</p>
+            <span>
+                원하는 과목만 선택 하세요!
+            </span>
+        </div>
+    </div>
+    <div class="main05">
+        <div></div>
+        <div>
+            <div>
+<!--
+                <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
+                <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
+                <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
+                <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
+-->
+            </div>
+<!--            <img src="images/mobile.png" alt="main_ui" id="phone">    -->
+        </div>
+        <div>
+            <p>오답분석 및 즐겨찾기</p>
+            <span>
+                틀린문제 분석과 즐겨찾기 기능까지!
+            </span>
+        </div>
+    </div>
+    
+    
 </body>
 </html>
