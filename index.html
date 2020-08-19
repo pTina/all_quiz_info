@@ -7,9 +7,18 @@
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <style>
+        :root{
+            --wSize:100%;
+            --hSize: 1000px;
+            --mainColor: #63a0d3;
+            --uiWidth: 253.99px;
+            --uiHeight:449.99px;
+            --phoneWidth: 275px;
+            --phoneHeight: 561px;
+        }
         *{overflow-x: hidden;}
-/*        .main01:after{content: ''; display: block; clear: both;}*/
-        .main01{ left: 0; top: 0; width: 100%; height: 1000px; overflow-y: hidden;
+/*    .main01 - design*/
+        .main01{ left: 0; top: 0; width: var(--wSize); height: var(--hSize); overflow-y: hidden;
                 background-image: url(images/study.jpg);
                 background-size: cover; background-repeat: no-repeat;
                 background-attachment: fixed;}
@@ -21,59 +30,31 @@
         .main01>span{position: absolute; top: 502px; left: 738px;
                     font-weight: 300; font-size: 30px; color: #fff; opacity: 0;}
         
-        .main02{ position: relative; width: 100%; height: 1000px; background-color: #fff;}
-/*        main02 하단배경*/
-        .main02>div:nth-of-type(1){width: 100%; height: 0; background-color: #63a0d3;
-                    position: absolute; bottom: 0; left: 0;}
+/*        .main02 - design*/
+        .main02,.main03{width: var(--wSize); height: var(--hSize);
+                background-image: url(images/mainBackground.jpg);
+                background-position: center;
+/*                background: linear-gradient(0deg, var(--mainColor) 30%, #ffffff 0%);*/
+                background-attachment: fixed;}
+        .main02>div:nth-of-type(1)>img{position: absolute;
+                                        width: var(--uiWidth); height:var(--uiHeight); }
+        #phone{ position: relative; 
+                width: 330px; height: 683px; 
+                background-image: url(images/phone.png);
+                background-size: cover;}
+/*
+        .main02>div:nth-of-type(1){width: 327px; position: relative; left: 400px; top: 200px;}
+        #phone{width: 327px;background-image: url(images/phone.png);}
         
-/*        main02 */
-        .main02>div:nth-of-type(2){position: absolute; left: 687px; top: 402px;
-                                    width:280px; height: 550px; background-color: #F7F1DF;
-                                    box-shadow: 0 1px 1px #3d3d3d,
-                                                0 3px 2px #424242, 
-                                                0 4px 10px #555555;
-                                    border-radius: 38px;
-        }
-/*        main02 유아이 감싸고 있는 div*/
-        .main02>div:nth-of-type(2)>div{width: 2000px; position: absolute; top: 53px; left: 14px;}
-/*        main02 유아이*/
-        .main02>div:nth-of-type(2)>div>img{width: 260px; float: left; display: none;}
-/*        .main02>div:nth-of-type(2)>div>img:first-child{display: none;}*/
-/*        main02 핸드폰 이미지*/
-        .main02>div:nth-of-type(2)>img{width: 280px; position: absolute; left: 0; top: 0;}
+        .main02>div:nth-of-type(2){ top:-400px; left: 900px; width: 480px; text-align: center;}
+        .main02>div:nth-of-type(2)>p{font-size: 90px; font-weight: bold; color: var(--mainColor);
+                                    margin-bottom: 30px;}
+        .main02>div:nth-of-type(2)>span{font-size: 20px; font-weight: 400; }
+*/
         
-/*        main02 상단 텍스트*/
-        .main02>div:nth-of-type(3){position: relative; top: 150px; left: 630px;
-                                    width: 424px;}
-        .main02>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900; position: relative;}
-        .main02>div:nth-of-type(3)>span{color: #2a2a2a; display: block; margin-left: 60px;
-                                        margin-top: 20px; position: relative; right: -370px;}
+
         
-/*        main03*/
-        .main03{ position: relative; width: 100%; height: 1000px; background-color: #fff;}
-        .main03>div:nth-of-type(1){width: 100%; height: 380px; background-color: #63a0d3;
-                    position: absolute; bottom: 0; left: 0;}
-        .main03>div:nth-of-type(3){ position: relative; top: 180px; left: 630px;
-                                    width: 424px;}
-        .main03>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900; position: relative;}
-        
-/*        main04*/
-        .main04{position: relative; width: 100%; height: 1000px; background-color: #fff;}
-        .main04>div:nth-of-type(1){width: 100%; height: 380px; background-color: #63a0d3;
-                    position: absolute; bottom: 0; left: 0;}
-        .main04>div:nth-of-type(3){ position: relative; top: 180px; left: 630px;
-                                    width: 424px;}
-        .main04>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900; position: relative;}
-        
-/*        main05*/
-        .main05{position: relative; width: 100%; height: 1000px; background-color: #fff;}
-        .main05>div:nth-of-type(1){width: 100%; height: 380px; background-color: #63a0d3;
-                    position: absolute; bottom: 0; left: 0;}
-        .main05>div:nth-of-type(3){ position: relative; top: 180px; left: 630px;
-                                    width: 424px;}
-        .main05>div:nth-of-type(3)>p{font-size: 80px; color: #428dc9; font-weight: 900; position: relative;}
-        
-        
+
         
         
         
@@ -98,24 +79,6 @@
             animation-duration: 2s;
             animation-fill-mode: forwards;
         }
-/*        main02 div_1*/
-        .ani_main02_div_1{
-            animation-name: kf_main02_div_1;
-            animation-duration: 1.23s;
-            animation-fill-mode: forwards;
-            animation-timing-function:ease-in-out;
-        }
-/*        main01 div_2_p DAILY QUIZ*/
-        .ani_main02_div_3_p{
-            animation-name: kf_main02_div_3_p;
-            animation-duration: 1.5s;
-            animation-fill-mode: forwards;
-        }
-        .ani_main02_div_3_span{
-            animation-name: kf_main02_div_3_span;
-            animation-duration: 1.5s;
-            animation-fill-mode: forwards;
-        }
         
 /*        main01 애니메이션-2*/
         @keyframes kf_main01Icon{
@@ -131,22 +94,7 @@
             to{top: 482px; opacity: 1;}
         }
         
-/*        main02 애니메이션-2*/
-/*        main02 하단배경*/
-        @keyframes kf_main02_div_1{
-            from{height: 0px;}
-            to{height: 380px;}
-        }
-/*        main02 DAILY QUIZ*/
-        @keyframes kf_main02_div_3_p{
-            from{ left:-640px; opacity: 0;}
-            to{ left:0px; opacity: 1;}
-        }
-        @keyframes kf_main02_div_3_span{
-            from{ right: -370px; opacity: 0;}
-            to{ right: 0; opacity: 1;}
-        }
-        
+
         
         
     </style>
@@ -175,6 +123,7 @@
                     $('#main01Icon').addClass('ani_main01Icon');
                     $('.main01>p').addClass('ani_main01_p');
                     $('.main01>span').addClass('ani_main01_span');
+                    
                 }else{
                     $('#main01Icon').removeClass('ani_main01Icon');
                     $('.main01>p').removeClass('ani_main01_p');
@@ -234,16 +183,11 @@
         </span>
     </div>
     <div class="main02">
-<!--       배경_하단_블루 -->
-        <div></div>
         <div>
-            <div>
-                <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
-                <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
-                <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
-                <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
-            </div>
-            <img src="images/mobile.png" alt="main_ui" id="phone">    
+            <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
+            <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
+            <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
+            <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
         </div>
         <div>
             <p>DAILY QUIZ</p>
@@ -253,7 +197,6 @@
         </div>
     </div>
     <div class="main03">
-        <div></div>
         <div>
             <div>
 <!--
@@ -263,56 +206,14 @@
                 <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
 -->
             </div>
-<!--            <img src="images/mobile.png" alt="main_ui" id="phone">    -->
         </div>
         <div>
-            <p>MOCK TEST</p>
+            <p>DAILY QUIZ</p>
             <span>
-                총 30문제로 제공되는 모의테스트로 자신의 실력을 확인해보세요.
+                랜덤으로 생성되는 문제를 매일매일 풀어보세요.
             </span>
         </div>
     </div>
-    <div class="main04">
-        <div></div>
-        <div>
-            <div>
-<!--
-                <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
-                <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
-                <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
-                <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
--->
-            </div>
-<!--            <img src="images/mobile.png" alt="main_ui" id="phone">    -->
-        </div>
-        <div>
-            <p>SUBJECT</p>
-            <span>
-                원하는 과목만 선택 하세요!
-            </span>
-        </div>
-    </div>
-    <div class="main05">
-        <div></div>
-        <div>
-            <div>
-<!--
-                <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
-                <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
-                <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
-                <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
--->
-            </div>
-<!--            <img src="images/mobile.png" alt="main_ui" id="phone">    -->
-        </div>
-        <div>
-            <p>오답분석 및 즐겨찾기</p>
-            <span>
-                틀린문제 분석과 즐겨찾기 기능까지!
-            </span>
-        </div>
-    </div>
-    
     
 </body>
 </html>
