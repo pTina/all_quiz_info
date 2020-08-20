@@ -6,15 +6,17 @@
     <title>All_Quiz</title>
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
+    <!--    마우스 mousesheel 쓰기 위함-->
+    <script src="../../web3/js/jquery.mousewheel.min.js"></script>
     <style>
         :root{
             --wSize:100%;
             --hSize: 1000px;
             --mainColor: #63a0d3;
-            --uiWidth: 253.99px;
-            --uiHeight:449.99px;
-            --phoneWidth: 275px;
-            --phoneHeight: 561px;
+            --uiWidth: 255px;
+            --uiHeight:450px;
+/*            --phoneWidth: 275px;*/
+/*            --phoneHeight: 561px;*/
         }
         *{overflow-x: hidden;}
 /*    .main01 - design*/
@@ -32,11 +34,12 @@
         
 /*        .main02 - design*/
         .main02,.main03{width: var(--wSize); height: var(--hSize);
+            position: relative;
                 background-image: url(images/mainBackground.jpg);
                 background-position: center;
 /*                background: linear-gradient(0deg, var(--mainColor) 30%, #ffffff 0%);*/
                 background-attachment: fixed;}
-        .main02>div:nth-of-type(1)>img{position: absolute;
+        .main02>div:nth-of-type(1)>img{position: absolute; top: 256px; left: 512px;
                                         width: var(--uiWidth); height:var(--uiHeight); }
         #phone{ position: relative; 
                 width: 330px; height: 683px; 
@@ -103,7 +106,7 @@
         var scroll = true;
         
         $(function(){
-           
+           console.log($(this).scrollTop());
             
             $('#main01Icon').addClass('ani_main01Icon');
             $('.main01>p').addClass('ani_main01_p');
@@ -117,6 +120,19 @@
             $(window).scroll(function(){
                 // 스크롤 위치
                 scrollTop=$(window).scrollTop();
+                
+                $('section').on('mousewheel',function(event, deltaY){
+                // event.deltay or deltaY 값으로 마우스휠이 위로 올라가면 + 내려가면-
+                console.log(event.deltaY +  deltaY);
+                    if(deltaY < 0){
+                        // 나( = section) 기준 다음꺼의 Offset의 top을 가져와라
+                        var st = $(this).next().offset().top;
+                        $('html, body').stop().animate({'scrollTop':st}, 1500,'easeOutBounce');
+                    }else if(deltaY >0){
+                        var st = $(this).prev().offset().top;
+                        $('html, body').stop().animate({'scrollTop':st}, 1500,'easeOutBounce');
+                    }
+                })
                 
                 // main01 애니메이션 조건
                 if(scrollTop<1000){
@@ -173,7 +189,7 @@
     </script>
 </head>
 <body>
-    <div class="main01">
+    <section class="main01">
         <div></div> 
         <img src="images/icon-1.png" alt="앱아이콘" id="main01Icon">
         <p>ALL QUIZ</p>
@@ -181,13 +197,13 @@
             이제 모바일로 공부하는 세상<br>
             언제 어디서나 간편하게 All Quiz로 공부하세요.
         </span>
-    </div>
-    <div class="main02">
+    </section>
+    <section class="main02">
         <div>
             <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
-            <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
-            <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
-            <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
+<!--            <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">-->
+<!--            <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">-->
+<!--            <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">-->
         </div>
         <div>
             <p>DAILY QUIZ</p>
@@ -195,8 +211,8 @@
                 랜덤으로 생성되는 문제를 매일매일 풀어보세요.
             </span>
         </div>
-    </div>
-    <div class="main03">
+    </section>
+    <section class="main03">
         <div>
             <div>
 <!--
@@ -213,7 +229,7 @@
                 랜덤으로 생성되는 문제를 매일매일 풀어보세요.
             </span>
         </div>
-    </div>
+    </section>
     
 </body>
 </html>
