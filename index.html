@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <!--    마우스 mousesheel 쓰기 위함-->
     <script src="../../web3/js/jquery.mousewheel.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <style>
         :root{
             --wSize:100%;
@@ -15,15 +16,19 @@
             --mainColor: #63a0d3;
             --uiWidth: 255px;
             --uiHeight:450px;
+        
 /*            --phoneWidth: 275px;*/
 /*            --phoneHeight: 561px;*/
         }
+        span{display: block;}
         *{overflow-x: hidden;}
 /*    .main01 - design*/
-        .main01{ left: 0; top: 0; width: var(--wSize); height: var(--hSize); overflow-y: hidden;
+        .main01{background-attachment: fixed;}
+        .main01,.main02,.main03,.main04
+                { left: 0; top: 0; width: var(--wSize); height: var(--hSize);           overflow-y: hidden;
                 background-image: url(images/study.jpg);
                 background-size: cover; background-repeat: no-repeat;
-                background-attachment: fixed;}
+                }
         .main01>div{position: absolute; width: 100%; height: 1000px; background-color: rgba(0,0,0,0.5);}
         #main01Icon{ position: absolute; width: 320px; height: 320px; top: 300px; left: 370px;
                     opacity: 0;}
@@ -31,35 +36,65 @@
                     font-weight: bold; font-size: 80px; color: #fff; opacity: 0;}
         .main01>span{position: absolute; top: 502px; left: 738px;
                     font-weight: 300; font-size: 30px; color: #fff; opacity: 0;}
+        .main02{background-image: url(../../main02background.png); background-size: 100% 1000px; background-position: center bottom; position: relative;}
+        .phone_frame{width: 320px; height: 600px; background-color: #000;
+                    border-radius: 30px; position: relative; left: 360px; top: 300px;
+                    }
+        .basic_ui{width: 300px; height: 500px; background-color: #fff;
+                    position: relative; left: 370px; bottom: 245px; float: left;}
+        .main02_contents{width: 500px; height: 300px;
+                position: relative; left: 540px; bottom: 220px;}
+        .main02_contents>div{width: 100%; height: 45%; background-color: var(--mainColor);
+                border-radius: 100px; margin-top: 2.5%;}
+        .main02_contents>div>*{text-align: center; color: #fff; }
+        .main02_contents>div>p{font-size: 50px; font-weight: bold; margin-top: 20px;} 
+        .main02_contents>div>span{ margin-top: 10px; font-weight: 300;}
+
+        .main03{background-image: url(../../main03background.png); 
+                background-size: 100% 1000px; position: relative;}
+        .main03>.phone_frame{left: 1000px; top: 250px;}
+        .main03>.basic_ui{left: 1010px; bottom: 295px;}
+        .main03_contents{width: 500px; height: 150px; 
+                        position: relative; top: -180px;}
+        .main03_conts_left{width: 150px; height: 100%; float: left;}
+        .fa-check-circle{font-size: 100px; display: block; text-align: center;
+                margin-top: 25px; color: var(--mainColor);}
+        .main03_contents::after{content: ""; display: block; margin: }
+        .main03_conts_right>*{color: var(--mainColor); margin-top: 20px; text-align: center;}
+        .main03_conts_right>p{font-size: 50px; font-weight: bold;}
+        .main03_conts_right>span{width: 300px; height: 30px;
+                                font-weight: 300; color: #fff;
+                                background-color: var(--mainColor);
+                                line-height: 30px; margin-left: 25px;}
         
-/*        .main02 - design*/
-        .main02,.main03{width: var(--wSize); height: var(--hSize);
-            position: relative;
-                background-image: url(images/mainBackground.jpg);
-                background-position: center;
-/*                background: linear-gradient(0deg, var(--mainColor) 30%, #ffffff 0%);*/
-                background-attachment: fixed;}
-        .main02>div:nth-of-type(1)>img{position: absolute; top: 256px; left: 512px;
-                                        width: var(--uiWidth); height:var(--uiHeight); }
-        #phone{ position: relative; 
-                width: 330px; height: 683px; 
-                background-image: url(images/phone.png);
-                background-size: cover;}
-/*
-        .main02>div:nth-of-type(1){width: 327px; position: relative; left: 400px; top: 200px;}
-        #phone{width: 327px;background-image: url(images/phone.png);}
+        .main04{background-image: url(../../main04background.png);
+                width: 100%; height: 1000px; position: relative;}
+        .main04_contents{width: 350px; margin: auto; top: 200px;
+                text-align: center; position: relative;}
+        .main04_contents>*{color: var(--mainColor); margin-top: 10px; text-align: center;}
+        .main04_contents>p{font-size: 50px; font-weight: bold; }
+        .main04_contents>span{color: #fff; padding: 5px; font-weight: 300;
+                            background-color: var(--mainColor);}
+        .main04_conts_Circle{left: 14.25%; position: absolute; top: 400px;}
+ 
+        .main04>.phone_frame{left: 0; top: 450px; margin: auto; width: 400px;}
+        .main04>.basic_ui{left: 650px; top: -100px; width: 380px;}
         
-        .main02>div:nth-of-type(2){ top:-400px; left: 900px; width: 480px; text-align: center;}
-        .main02>div:nth-of-type(2)>p{font-size: 90px; font-weight: bold; color: var(--mainColor);
-                                    margin-bottom: 30px;}
-        .main02>div:nth-of-type(2)>span{font-size: 20px; font-weight: 400; }
-*/
+        
         
 
         
-
-        
-        
+        .ani_show{
+            animation-name: kf_show;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        .ani_hide{
+            animation-name: kf_hide;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            
+        }
         
 /*        main01 애니메이션-1 */
 /*        main01 아이콘*/
@@ -83,6 +118,7 @@
             animation-fill-mode: forwards;
         }
         
+
 /*        main01 애니메이션-2*/
         @keyframes kf_main01Icon{
             from{top: 300px; opacity: 0;}
@@ -95,6 +131,16 @@
         @keyframes kf_main01_span{
             from{top: 502px482px; opacity: 0;}
             to{top: 482px; opacity: 1;}
+        }
+        
+        @keyframes kf_hide{
+            from{opacity: 1;}
+            to{opacity: 0;}
+        }
+        
+        @keyframes kf_show{
+            from{opacity: 0;}
+            to{opacity: 1;}
         }
         
 
@@ -121,19 +167,19 @@
                 // 스크롤 위치
                 scrollTop=$(window).scrollTop();
                 
-                $('section').on('mousewheel',function(event, deltaY){
-                // event.deltay or deltaY 값으로 마우스휠이 위로 올라가면 + 내려가면-
-                console.log(event.deltaY +  deltaY);
-                    if(deltaY < 0){
-                        // 나( = section) 기준 다음꺼의 Offset의 top을 가져와라
-                        var st = $(this).next().offset().top;
-                        $('html, body').stop().animate({'scrollTop':st}, 1500,'easeOutBounce');
-                    }else if(deltaY >0){
-                        var st = $(this).prev().offset().top;
-                        $('html, body').stop().animate({'scrollTop':st}, 1500,'easeOutBounce');
-                    }
-                })
-                
+//                $('section').on('mousewheel',function(event, deltaY){
+//                // event.deltay or deltaY 값으로 마우스휠이 위로 올라가면 + 내려가면-
+//                console.log(event.deltaY +  deltaY);
+//                    if(deltaY < 0){
+//                        // 나( = section) 기준 다음꺼의 Offset의 top을 가져와라
+//                        var st = $(this).next().offset().top;
+//                        $('html, body').stop().animate({'scrollTop':st+2}, 1000);
+//                    }else if(deltaY >0){
+//                        var st = $(this).prev().offset().top;
+//                        $('html, body').stop().animate({'scrollTop':st+2}, 1000);
+//                    }
+//                })
+//                
                 // main01 애니메이션 조건
                 if(scrollTop<1000){
                     $('#main01Icon').addClass('ani_main01Icon');
@@ -148,27 +194,7 @@
                 
                 // main02 애니메이션 조건
                 if(scrollTop >= 1000 && scrollTop <2000){
-                    $('.main02>div:nth-of-type(1)').addClass('ani_main02_div_1');
-                    $('.main02>div:nth-of-type(2)>div>img').delay(300).fadeIn(1000,function(){
-                        $('.main02>div:nth-of-type(2)>div').stop().animate({'left':-252},function(){
-                            setTimeout(function(){
-                                $('.main02>div:nth-of-type(2)>div').css({'left':-511,'top':52});
-                            },1000);
-                            
-                            setTimeout(function(){
-                                $('.main02>div:nth-of-type(2)>div').stop().animate({'left':-770});
-                            },2000);
-                        });
-                        
-                    });
-                    $('.main02>div:nth-of-type(3)>p').addClass('ani_main02_div_3_p');
-                    $('.main02>div:nth-of-type(3)>span').addClass('ani_main02_div_3_span');
                     
-                    
-                }else{
-                    $('.main02>div:nth-of-type(1)').removeClass('ani_main02_div_1');
-                    $('.main02>div:nth-of-type(3)>p').removeClass('ani_main02_div_3_p');
-                    $('.main02>div:nth-of-type(3)>span').removeClass('ani_main02_div_3_span');
                     
                 }
                 
@@ -199,36 +225,38 @@
         </span>
     </section>
     <section class="main02">
-        <div>
-            <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
-<!--            <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">-->
-<!--            <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">-->
-<!--            <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">-->
-        </div>
-        <div>
-            <p>DAILY QUIZ</p>
-            <span>
-                랜덤으로 생성되는 문제를 매일매일 풀어보세요.
-            </span>
+        <div class="phone_frame"></div>
+        <div class="basic_ui"></div>
+        <div class="main02_contents">
+            <div>
+                <p>DIALY QUIZ</p>
+                <span>랜덤으로 생성되는 문제를 매일 풀어보세요.</span>
+            </div>
+            <div>
+                <p>MOCK TEST</p>
+                <span>30문제로 제공되는 모의고사로 실력 TEST!</span>
+            </div>
         </div>
     </section>
     <section class="main03">
-        <div>
-            <div>
-<!--
-                <img src="images/m02_daily_ui01.png" alt="mian02_daily_ui01">
-                <img src="images/m02_daily_ui02.png" alt="mian02_daily_ui02">
-                <img src="images/m02_daily_ui03.png" alt="mian02_daily_ui03">
-                <img src="images/m02_daily_ui04.png" alt="mian02_daily_ui03">
--->
-            </div>
+        <div class="phone_frame"></div>
+        <div class="basic_ui"></div>
+        <div class="main03_contents">
+           <div class="main03_conts_left"><i class="fas fa-check-circle"></i></div>
+           <div class="main03_conts_right">
+               <p>문제 유형 선택</p>
+               <span>원하는 문제만 골라서 풀자!</span>
+           </div>
         </div>
-        <div>
-            <p>DAILY QUIZ</p>
-            <span>
-                랜덤으로 생성되는 문제를 매일매일 풀어보세요.
-            </span>
+    </section>
+    <section class="main04">
+        <div class="main04_contents">
+            <p>오답분석</p>
+            <span>오답현황과 과목분석을 그래프로 확인하세요.</span>
         </div>
+        <div class="phone_frame"></div>
+        <div class="basic_ui"></div>
+        <img class="main04_conts_Circle" src="../../graph.png">
     </section>
     
 </body>
